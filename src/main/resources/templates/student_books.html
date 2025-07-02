@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Available Books</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-5">
+  <h3>📗 Available Books</h3>
+  <a href="/student/dashboard" class="btn btn-secondary mb-3">⬅️ Back to Dashboard</a>
+  <table class="table table-bordered table-hover">
+    <thead>
+    <tr>
+      <th>Title</th>
+      <th>Author</th>
+<!--      <th>Action</th>-->
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="book : ${books}">
+      <td th:text="${book.title}"></td>
+      <td th:text="${book.author}"></td>
+      <td>
+<!--        <form th:action="@{'/student/issue/' + ${book.id}}" method="post">-->
+<!--          <button type="submit" class="btn btn-primary btn-sm">Issue Book</button>-->
+<!--        </form>-->
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>
